@@ -1,1 +1,35 @@
+sudo apt install virtiofsd
+sudo apt install virt-manager
+wget https://mirror.openshift.com/pub/openshift-v4/clients/crc/latest/crc-linux-amd64.tar.xz
+sudo tar -xpvf crc-linux-amd64.tar.xz
+ cd crc-linux-1.22.0-amd64/
+sudo cp crc /usr/local/bin/
+crc setup
+
+
+To download the pull secret login to below Redhat portal,
+
+https://cloud.redhat.com/openshift/install/crc/installer-provisioned
+
+
+########
+crc start -p pull-secret
+
+
+
+$ crc oc-env
+export PATH="/home/sysadmin/.crc/bin/oc:$PATH"
+# Run this command to configure your shell:
+# eval $(crc oc-env)
+$
+
+
+Done 
+#################
+
+report
+
+https://www.linuxtechi.com/setup-single-node-openshift-cluster-rhel-8/
+
+
 
