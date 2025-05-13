@@ -3,6 +3,19 @@
 https://docs.docker.com/engine/install/rhel/
 
 
+sudo dnf update -y
+
+sudo dnf config-manager --add-repo=https://download.docker.com/linux/centos/docker-ce.repo
+sudo dnf install docker-ce docker-ce-cli containerd.io -y
+
+sudo systemctl enable --now docker
+
+⚙️ 2. Install Docker Compose
+
+sudo curl -L "https://github.com/docker/compose/releases/latest/download/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
+sudo chmod +x /usr/local/bin/docker-compose
+
+
 #############   ELK  ###########################
 
 https://github.com/Here2ServeU/elk-docker-install
@@ -20,6 +33,9 @@ docker run -d \
   -v portainer_data:/data \
   portainer/portainer-ce:latest
 ###############################################################################
+
+
+
 
 
 
