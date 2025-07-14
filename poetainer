@@ -1,0 +1,17 @@
+version: '3.8'
+
+services:
+  portainer:
+    image: portainer/portainer-ce:latest
+    container_name: portainer
+    restart: always
+    ports:
+      - "8000:8000"    # (Optional) Port for Edge agent
+      - "9000:9000"    # Web UI
+      - "8443:9443"    # HTTPS UI (optional if you use HTTPS)
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+      - portainer_data:/data
+
+volumes:
+  portainer_data:
